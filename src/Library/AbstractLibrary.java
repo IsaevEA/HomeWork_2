@@ -5,18 +5,19 @@ public abstract class AbstractLibrary {
     private String author;
     private String name;
     private int age;
-    private static int count = 0;
+    private static int countBook = 0;
 
     public AbstractLibrary() {
-        count++;
+        countBook++;
     }
 
     public AbstractLibrary(int cipher, String author, String name, int age) {
-        this.cipher = cipher;
+
         this.author = author;
         this.name = name;
         this.age = age;
-        count++;
+        this.cipher = cipher;
+        countBook++;
     }
 
     public int getCipher() {
@@ -26,6 +27,7 @@ public abstract class AbstractLibrary {
     public void setCipher(int cipher) {
         this.cipher = cipher;
     }
+
 
     public String getAuthor() {
         return author;
@@ -51,18 +53,17 @@ public abstract class AbstractLibrary {
         this.age = age;
     }
 
-    public static int getCount() {
-        return count;
+    public static int getCountBook() {
+        return countBook;
     }
 
-    public static void setCount(int count) {
-        AbstractLibrary.count = count;
+    public static void setCountBook(int countBook) {
+        AbstractLibrary.countBook = countBook;
     }
 
     @Override
     public String toString() {
         return "Library.AbstractLibrary{" +
-                "cipher=" + cipher +
                 ", author='" + author + '\'' +
                 ", name='" + name + '\'' +
                 ", age=" + age +
@@ -70,7 +71,7 @@ public abstract class AbstractLibrary {
     }
 
     public void printCount(){
-        System.out.println("Книги в количестве: " + count + " шт");
+        System.out.println("Книги в количестве: " + countBook + " шт");
     }
 
 
